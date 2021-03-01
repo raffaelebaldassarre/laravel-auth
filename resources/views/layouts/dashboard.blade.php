@@ -18,6 +18,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- Icon -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 </head>
 <body>
     <div id="app">
@@ -72,9 +75,21 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-xs-12 col-md-3 col-lg-2">
+                    <ul class="list-unstyled">
+                        <li><a href="{{ route('admin.index')}}"><i class="fas fa-tachometer-alt fa-lg fa-fw"></i> Dashboard</a></li>
+                        <li><a href="{{ route('admin.posts.index')}}"><i class="fas fa-book-open fa-lg fa-fw"></i> Posts</a></li>
+                        <li><a href="#"><i class="fa fa-folder-open fa-lg fa-fw" aria-hidden="true"></i> Categories</a></li>
+                        <li><a href="#"><i class="fas fa-tag fa-lg fa-fw"></i> Tags</a></li>
+                    </ul>
+                </div>
+                <main class="col-xs-12 col-md-9 col-lg-10">
+                    @yield('content')
+                </main>
+            </div>
+        </div>
     </div>
 </body>
 </html>
